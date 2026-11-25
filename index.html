@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عرض تقديمي | مشروع سُقيا الذكي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- خلفية جمالية متحركة -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- الشريط العلوي مع الأسهم -->
+  <header class="top-navbar">
+    <div class="brand-badge">
+      <span class="dot"></span>
+      <span>SUQYA AI • عرض تقديمي</span>
+    </div>
+
+    <!-- أزرار الأسهم العلوية -->
+    <div class="top-controls">
+      <button id="prevBtn" class="nav-arrow" aria-label="الشريحة السابقة" title="الشريحة السابقة">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        <span>السابق</span>
+      </button>
+
+      <div class="slide-counter">
+        <span id="currentSlideNum">01</span>
+        <span class="divider">/</span>
+        <span id="totalSlidesNum">06</span>
+      </div>
+
+      <button id="nextBtn" class="nav-arrow primary-arrow" aria-label="الشريحة التالية" title="الشريحة التالية">
+        <span>التالي</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- نقاط سريعة للشرائح -->
+    <div class="dots-indicator" id="dotsContainer"></div>
+
+    <!-- شريط التقدم السفلي للهيدر -->
+    <div class="progress-track">
+      <div class="progress-fill" id="progressBar"></div>
+    </div>
+  </header>
+
+  <!-- حاوية الشرائح -->
+  <main class="slides-wrapper" id="slidesWrapper">
+
+    <!-- الشريحة 1: الغلاف -->
+    <section class="slide active" data-index="0">
+      <div class="slide-content hero-layout">
+        <span class="pill-tag">ابتكار تقني مستدام 2026</span>
+        <h1 class="hero-title">منظومة <span class="gradient-text">سُقيا الذكية</span></h1>
+        <p class="hero-subtitle">
+          إدارة ذكية للموارد المائية والري الزراعي بالاعتماد على إنترنت الأشياء (IoT) وخوارزميات الذكاء الاصطناعي التنبؤية.
+        </p>
+        <div class="hero-meta">
+          <div class="meta-card">
+            <span class="meta-label">إعداد الطالبة</span>
+            <span class="meta-value">مرام أمين</span>
+          </div>
+          <div class="meta-card">
+            <span class="meta-label">مجال المشروع</span>
+            <span class="meta-value">التقنية الخضراء والذكاء الاصطناعي</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الشريحة 2: المشكلة -->
+    <section class="slide" data-index="1">
+      <div class="slide-content">
+        <div class="section-header">
+          <span class="step-num">01 / التحدي</span>
+          <h2>لماذا نحتاج إلى حل جذري لإدارة المياه؟</h2>
+        </div>
+        <div class="cards-grid three-cols">
+          <div class="glass-card">
+            <div class="icon-box warning">💧</div>
+            <h3>هدر الري التقليدي</h3>
+            <p>أكثر من 45% من مياه الري تُهدر بسبب الجداول الزمنية الثابتة التي لا تراعي رطوبة التربة الفعلية.</p>
+          </div>
+          <div class="glass-card">
+            <div class="icon-box warning">🌡️</div>
+            <h3>تقلبات المناخ المفاجئة</h3>
+            <p>ارتفاع درجات الحرارة ومعدلات التبخر يؤثران مباشرة على صحة المحاصيل دون إنذار مبكر للمزارع.</p>
+          </div>
+          <div class="glass-card">
+            <div class="icon-box warning">📉</div>
+            <h3>غياب البيانات اللحظية</h3>
+            <p>الاعتماد على التقدير البشري يرفع التكاليف التشغيلية ويقلل من جودة وكفاءة الإنتاج الزراعي.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الشريحة 3: الحل الذكي -->
+    <section class="slide" data-index="2">
+      <div class="slide-content split-layout">
+        <div class="split-text">
+          <span class="step-num">02 / الحل المقترح</span>
+          <h2>كيف تعمل منصة <span class="gradient-text">سُقيا AI</span>؟</h2>
+          <p class="lead-p">
+            نربط التربة بالسحابة الإلكترونية عبر مستشعرات دقيقة تحلل البيانات كل ثانية وتصدر أوامر ري تلقائية بالكمية المثالية فقط.
+          </p>
+          <ul class="feature-list">
+            <li><strong>استشعار لحظي:</strong> قياس رطوبة التربة، الملوحة، ودرجة الحرارة بدقة عالية.</li>
+            <li><strong>تحليل تنبؤي:</strong> دمج بيانات الطقس لتأجيل الري تلقائيًا قبل هطول الأمطار.</li>
+            <li><strong>تحكم عن بُعد:</strong> لوحة تحكم وتطبيق جوال لإدارة المضخات بضغطة زر.</li>
+          </ul>
+        </div>
+        <div class="split-visual">
+          <div class="architecture-box">
+            <div class="arch-node">📡 مستشعرات التربة (IoT)</div>
+            <div class="arch-arrow">⬇</div>
+            <div class="arch-node highlight">🧠 محرك الذكاء الاصطناعي السحابي</div>
+            <div class="arch-arrow">⬇</div>
+            <div class="arch-node">🚰 صمامات الري الذكية + تطبيق الجوال</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الشريحة 4: المزايا التقنية -->
+    <section class="slide" data-index="3">
+      <div class="slide-content">
+        <div class="section-header">
+          <span class="step-num">03 / المميزات التنافسية</span>
+          <h2>تقنيات مصممة للكفاءة وسهولة الاستخدام</h2>
+        </div>
+        <div class="cards-grid two-cols">
+          <div class="glass-card horizontal">
+            <div class="icon-box cyan">⚡</div>
+            <div>
+              <h3>توفير استهلاك الطاقة</h3>
+              <p>تشغيل المضخات في أوقات الذروة المنخفضة وبأقصر مدة زمنية مطلوبة.</p>
+            </div>
+          </div>
+          <div class="glass-card horizontal">
+            <div class="icon-box emerald">🔔</div>
+            <div>
+              <h3>تنبيهات استباقية ذكية</h3>
+              <p>إشعارات فورية عند اكتشاف تسرب في الأنابيب أو جفاف مفاجئ في أحد القطاعات.</p>
+            </div>
+          </div>
+          <div class="glass-card horizontal">
+            <div class="icon-box cyan">📊</div>
+            <div>
+              <h3>تقارير استدامة تلقائية</h3>
+              <p>رسوم بيانية توضح كمية المياه الموفرة شهريًا وتكلفة التشغيل لكل محصول.</p>
+            </div>
+          </div>
+          <div class="glass-card horizontal">
+            <div class="icon-box emerald">🌐</div>
+            <div>
+              <h3>يعمل بدون إنترنت مستمر</h3>
+              <p>وحدة تحكم محلية تحتفظ بجداول الري الذكية حتى في حال انقطاع الشبكة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الشريحة 5: الأرقام والأثر -->
+    <section class="slide" data-index="4">
+      <div class="slide-content">
+        <div class="section-header">
+          <span class="step-num">04 / الأثر المتوقع</span>
+          <h2>نتائج ملموسة خلال أول موسم تشغيل</h2>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">42%</span>
+            <span class="stat-title">توفير في استهلاك المياه</span>
+            <p>مقارنة بأنظمة الري التقليدية المعتمدة على المؤقت الزمني.</p>
+          </div>
+          <div class="stat-card featured">
+            <span class="stat-number">+28%</span>
+            <span class="stat-title">زيادة في جودة المحصول</span>
+            <p>بفضل الحفاظ على مستوى رطوبة متوازن يمنع إجهاد الجذور.</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">24/7</span>
+            <span class="stat-title">مراقبة آلية مستمرة</span>
+            <p>تغطية شاملة للمزرعة دون الحاجة لتواجد ميداني دائم.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الشريحة 6: الخاتمة -->
+    <section class="slide" data-index="5">
+      <div class="slide-content closing-layout">
+        <span class="pill-tag">نحو مستقبل أخضر مستدام</span>
+        <h2>شكرًا لحسن استماعكم</h2>
+        <p class="closing-text">
+          منظومة <strong>سُقيا الذكية</strong> ليست مجرد أداة تقنية، بل خطوة عملية لحماية ثروتنا المائية وتعزيز الأمن الغذائي.
+        </p>
+        <div class="closing-actions">
+          <button id="restartBtn" class="restart-btn">↻ إعادة العرض من البداية</button>
+        </div>
+        <footer class="slide-footer">
+          إعداد: مرام أمين • مشروع العرض التقديمي التفاعلي
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const restartBtn = document.getElementById('restartBtn');
+    const currentSlideNum = document.getElementById('currentSlideNum');
+    const totalSlidesNum = document.getElementById('totalSlidesNum');
+    const progressBar = document.getElementById('progressBar');
+    const dotsContainer = document.getElementById('dotsContainer');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    totalSlidesNum.textContent = String(totalSlides).padStart(2, '0');
+
+    // إنشاء نقاط الشرائح في الأعلى
+    slides.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.classList.add('nav-dot');
+      dot.setAttribute('aria-label', `الانتقال للشريحة ${idx + 1}`);
+      if (idx === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(idx));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.nav-dot');
+
+    function updateUI() {
+      slides.forEach((slide, idx) => {
+        slide.classList.remove('active', 'prev');
+        if (idx === currentIndex) {
+          slide.classList.add('active');
+        } else if (idx < currentIndex) {
+          slide.classList.add('prev');
+        }
+      });
+
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+
+      currentSlideNum.textContent = String(currentIndex + 1).padStart(2, '0');
+      const progressPercent = ((currentIndex + 1) / totalSlides) * 100;
+      progressBar.style.width = `${progressPercent}%`;
+
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === totalSlides - 1;
+    }
+
+    function goToSlide(index) {
+      if (index >= 0 && index < totalSlides) {
+        currentIndex = index;
+        updateUI();
+      }
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    restartBtn.addEventListener('click', () => goToSlide(0));
+
+    // التنقل بأسهم لوحة المفاتيح (مع مراعاة اتجاه RTL)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        goToSlide(currentIndex + 1);
+      } else if (e.key === 'ArrowRight') {
+        goToSlide(currentIndex - 1);
+      }
+    });
+
+    updateUI();
+  </script>
+</body>
+</html>
